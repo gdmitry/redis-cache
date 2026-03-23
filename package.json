@@ -1,0 +1,28 @@
+{
+  "name": "redis-cache",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "dotenv node ./dist/index.js",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.{ts,js,json,yaml,yml,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,js,json,yaml,yml,md}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/redis": "^4.0.11",
+    "express": "^5.2.1",
+    "redis": "^5.11.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "dotenv-cli": "^7.4.2",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
