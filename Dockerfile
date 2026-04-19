@@ -24,7 +24,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 
 # Install production dependencies only
-RUN npm install -g pnpm && pnpm install --frozen-lockfile --prod
+RUN npm install -g pnpm && pnpm install  --ignore-scripts --frozen-lockfile --prod
 
 # Copy built artifacts from builder
 COPY --from=builder /app/dist ./dist
