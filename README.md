@@ -26,6 +26,6 @@ Redis with Node Crash Course - Cache Data for Improved Performance
 
 ## PG admin
 
-1. ```docker run --name pgadmin-container -p 5050:80 -e PGADMIN_DEFAULT_EMAIL=admin@gmail.com -e PGADMIN_DEFAULT_PASSWORD=admin -d dpage/pgadmin4``
+1. ```docker run --name pgadmin-container -p 5050:80 -e PGADMIN_DEFAULT_EMAIL=admin@gmail.com -e PGADMIN_DEFAULT_PASSWORD=admin -d dpage/pgadmin4```
 
 

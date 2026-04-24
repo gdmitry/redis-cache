@@ -1,5 +1,6 @@
 import type { Request, Response } from 'express';
 import { generateAccessToken, generateRefreshToken, verifyRefreshToken } from '../../auth';
+import { setJWTCookie } from '../../cookie';
 import { prisma } from '../../prisma';
 
 export async function refresh(req: Request, res: Response): Promise<void> {
@@ -44,11 +45,7 @@ export async function refresh(req: Request, res: Response): Promise<void> {
       },
     });
 
-    res.cookie('jwt', newRefreshToken, {
-      httpOnly: true,
-      sameSite: 'none',
-      maxAge: 24 * 60 * 60 * 1000,
-    });
+    setJWTCookie(res, newRefreshToken);
     res.setHeader('Authorization', `Bearer ${newAccessToken}`);
     res.json({ accessToken: newAccessToken });
   } catch (err) {

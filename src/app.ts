@@ -15,8 +15,9 @@ export function createApp(): Express {
   const app = express();
   app.use(express.json());
   app.use(cookieParser());
+  app.use(express.static('public'));
 
-  app.get('/', (_req: Request, res: Response) => {
+  app.get('/hello', (_req: Request, res: Response) => {
     res.send('Hello World!');
   });
 
@@ -65,7 +66,7 @@ export function createApp(): Express {
 
   app.post('/refresh', refresh);
 
-  app.post('/logout', authMiddleware, logout);
+  app.post('/logout', logout);
 
   app.get('/me', authMiddleware, me);
 
