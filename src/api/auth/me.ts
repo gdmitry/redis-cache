@@ -3,7 +3,7 @@ import { prisma } from '../../prisma';
 
 export async function me(req: Request, res: Response): Promise<void> {
   try {
-    const userId = (req as any).userId;
+    const userId = (req as any).user?.userId;
     if (!userId) {
       res.status(401).json({ error: 'User not authenticated' });
       return;
